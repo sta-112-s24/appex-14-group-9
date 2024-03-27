@@ -1,0 +1,61 @@
+---
+title: "Appex 14 - Group 9"
+format: 
+  html:
+    self-contained: true
+editor: visual
+---
+
+## Part 1
+
+Run the code below to create your dataset:
+
+```{r}
+library(tidyverse)
+set.seed(31)
+n <- 10000
+data <- tibble(
+    x1 = rnorm(n),
+    x2 = rnorm(n),
+    x3 = rnorm(n),
+    x4 = rnorm(n),
+    x5 = rnorm(n),
+    x6 = rnorm(n),
+    x7 = rnorm(n),
+    x8 = rnorm(n),
+    x9 = rnorm(n),
+    x10 = rnorm(n),
+    x11 = rnorm(n),
+    x12 = rnorm(n),
+    x13 = rnorm(n),
+    x14 = rnorm(n),
+    x15 = rnorm(n),
+    x16 = rnorm(n),
+    x17 = rnorm(n),
+    x18 = rnorm(n),
+    x19 = rnorm(n),
+    x20 = rnorm(n),
+    y = 0.2 * x1 + 0.2 * x2 + 0.2 * x3 + rnorm(n)
+  )
+```
+
+Run the code to fit a linear model predicting `y` using all of the other predictors.
+
+```{r}
+full_model <- lm(y ~ ., data = data) 
+summary(full_model)
+```
+
+If you were only selecting variables based on statistical significance, what would you include?
+
+## Part 2
+
+Update the code below to use the `regsubset` function to find the best subset of variables to include in your model with `BIC` as the criterion.
+
+```{r}
+all_subsets <- regsubset(---)
+plot(all_subsets)
+```
+
+Which variables did you choose?
+
