@@ -53,7 +53,9 @@ If you were only selecting variables based on statistical significance, what wou
 Update the code below to use the `regsubset` function to find the best subset of variables to include in your model with `BIC` as the criterion.
 
 ```{r}
-all_subsets <- regsubset(---)
+# install.packages("leaps")
+library(leaps)
+all_subsets <- regsubsets(---)
 plot(all_subsets)
 ```
 
